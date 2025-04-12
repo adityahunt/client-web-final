@@ -1,50 +1,56 @@
-import { addExpense } from './store/features/expenses/expenseSlice';
-import React, { useState, useEffect } from 'react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+// import { addExpense } from './store/features/expenses/expenseSlice';
+import 
+// React,
+ { useState, useEffect } from 'react';
+// import { Button } from "@/components/ui/button";
+// import { Input } from "@/components/ui/input";
+// import { Label } from "@/components/ui/label";
+import { Card, CardHeader, CardTitle, CardContent, 
+  // CardFooter 
+} from "@/components/ui/card";
 import './App.css';
 import Header from './components/Header';
 import { Expense } from './types';
 import ExpenseListItem from './components/ExpenseListItem';
 import { useAppSelector, useAppDispatch } from './store/hooks';
 import ExpenseForm from './components/ui/ExpenseForm';
-import { deleteExpense, editExpense } from './store/features/expenses/expenseSlice';
+import { deleteExpense, 
+  // editExpense 
+} from './store/features/expenses/expenseSlice';
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-  DialogFooter,
-  DialogClose
+  // DialogTrigger,
+  // DialogFooter,
+  // DialogClose
 } from "@/components/ui/dialog";
 
 function App() {
-  const year = new Date().getFullYear();
+  // const year = new Date().getFullYear();
   const appTitle = "My Dynamic Expense Tracker";
   const expenses = useAppSelector((state) => state.expenses.expenses);
   const dispatch = useAppDispatch();
-  const [inputValue, setInputValue] = useState<string>('');
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
+  // const [inputValue, setInputValue] = useState<string>('');
+  // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setInputValue(event.target.value);
+  // };
 
-  const handleClearClick = () => {
-    setInputValue('');
-  };
-  const handleAddDummy = () => {
-    const dummyExpenseData = {
-      title: `Test Expense ${Date.now() % 1000}`,
-      amount: Math.floor(Math.random() * 100) + 1,
-      category: 'Testing',
-      date: new Date()
-    };
-    console.log("Dispatching addExpense with:", dummyExpenseData);
-    dispatch(addExpense(dummyExpenseData));
-  };
+  // const handleClearClick = () => {
+  //   setInputValue('');
+  // };
+  // const handleAddDummy = () => {
+  //   const dummyExpenseData = {
+  //     title: `Test Expense ${Date.now() % 1000}`,
+  //     amount: Math.floor(Math.random() * 100) + 1,
+  //     category: 'Testing',
+  //     date: new Date()
+  //   };
+  //   console.log("Dispatching addExpense with:", dummyExpenseData);
+  //   dispatch(addExpense(dummyExpenseData));
+  // };
 
   useEffect(() => {
     console.log("App component mounted!");
